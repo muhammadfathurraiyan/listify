@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <div className="mt-8 bg-zinc-800 w-96 max-sm:w-full">
-      <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-1.5 -translate-y-1.5">
+      <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
         <h2 className="text-2xl font-bold">login to continue.</h2>
         <form className="mt-4 flex flex-col justify-center gap-2">
           <>
@@ -24,12 +24,12 @@ export default function Login() {
             />
           </>
           <div className="flex items-center justify-between">
-            <Button color="blue" text="login" />
+            <Button color="blue" text="login🔓" />
             <Link
               href="/register"
               className="underline hover:no-underline duration-200 text-sm"
             >
-              don't have any account? <br /> register here..
+              don't have account? <br /> register here..
             </Link>
           </div>
         </form>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Register() {
   return (
     <div className="mt-8 bg-zinc-800 w-96 max-sm:w-full">
-      <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-1.5 -translate-y-1.5">
+      <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
         <h2 className="text-2xl font-bold">register a new account.</h2>
         <form className="mt-4 flex flex-col justify-center gap-2">
           <>
@@ -40,12 +40,12 @@ export default function Register() {
             />
           </>
           <div className="flex items-center justify-between">
-            <Button color="blue" text="register" />
+            <Button color="green" text="register" />
             <Link
               href="/login"
               className="underline hover:no-underline duration-200 text-sm"
             >
-              already have an account? <br /> login here..
+              already have account? <br /> login here..
             </Link>
           </div>
         </form>

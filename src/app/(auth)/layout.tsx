@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-type TChildren = {
+export default function AuthLayout({
+  children,
+}: {
   children: React.ReactNode;
-};
-
-export default function AuthLayout({ children }: TChildren) {
+}) {
   return (
-    <>
+    <section className="flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className="font-bold text-4xl">hello world.</h1>
       <p className="">
         welcome to{" "}
@@ -16,6 +16,6 @@ export default function AuthLayout({ children }: TChildren) {
         todo app.👋
       </p>
       {children}
-    </>
+    </section>
   );
 }

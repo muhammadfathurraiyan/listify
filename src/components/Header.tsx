@@ -6,16 +6,16 @@ const Header = () => {
   const path = usePathname();
   return (
     <header
-      className={`absolute top-4 flex items-center justify-between w-11/12 ${
+      className={`flex items-center justify-between px-8 max-sm:px-4 py-4 border-b border-zinc-800 ${
         path === "/login" || path === "/register" ? "hidden" : ""
       }`}
     >
       <h1 className="text-3xl font-bold">listify.</h1>
       <div className="flex gap-5 items-center">
-        <p className="max-sm:hidden">
-          support developer with <br /> a glass of coffee? ☕
-        </p>
-        <Button color="orange" text="Donate🚀" />
+        <div className="max-sm:hidden">
+          <Button color="orange" text="donate☕" />
+        </div>
+        <Button color="fuchsia" text="logout🔒" />
       </div>
     </header>
   );
