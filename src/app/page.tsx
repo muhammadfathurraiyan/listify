@@ -1,21 +1,12 @@
-import Button from "@/components/Button";
-import Link from "next/link";
+import TodoCard from "@/components/TodoCard";
+import TodoForm from "@/components/TodoForm";
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className="grid sm:grid-cols-5 min-h-screen">
       <div className="relative sm:col-span-3 sm:border-r max-sm:border-t border-zinc-800 h-screen">
         <div className="absolute inset-y-0 inset-x-0 grid sm:grid-cols-3 gap-8 max-sm:p-8 p-12 overflow-y-auto">
-          <div className="bg-zinc-800 w-full h-fit">
-            <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
-              <h3 className="text-xl font-bold">coding c++</h3>
-              <p className="mb-4">
-                desc: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, beatae.
-              </p>
-              <Button color="green" text="done!" />
-            </div>
-          </div>
+          <TodoCard />
         </div>
       </div>
       <div className="sm:col-span-2 relative max-sm:-order-1">
@@ -24,27 +15,7 @@ export default function Home() {
           <div className="bg-zinc-800 w-full">
             <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
               <h2 className="text-2xl font-bold">add new todo.</h2>
-              <form className="mt-4 flex flex-col justify-center gap-2">
-                <>
-                  <label htmlFor="title">title :</label>
-                  <input
-                    name="title"
-                    type="text"
-                    className="bg-zinc-100 border border-zinc-800 p-1"
-                  />
-                </>
-                <>
-                  <label htmlFor="description">description :</label>
-                  <textarea
-                    name="description"
-                    rows={5}
-                    className="bg-zinc-100 border border-zinc-800 mb-4 p-1"
-                  ></textarea>
-                </>
-                <div className="flex items-center justify-between">
-                  <Button color="blue" text="add!" />
-                </div>
-              </form>
+              <TodoForm />
             </div>
           </div>
           <div>

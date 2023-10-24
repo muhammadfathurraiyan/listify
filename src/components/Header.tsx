@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header
       className={`flex items-center justify-between px-8 max-sm:px-4 py-4 border-b border-zinc-800 ${
-        path === "/login" || path === "/register" ? "hidden" : ""
+        (path === "/login" || path === "/register") && "hidden"
       }`}
     >
       <h1 className="text-3xl font-bold">listify.</h1>
