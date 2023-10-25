@@ -1,4 +1,4 @@
-import { deleteTodo } from "@/lib/action";
+import { deleteTodo } from "@/action/action";
 
 type Tbutton = {
   id: string;

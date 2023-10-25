@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/global/Header";
+import Footer from "@/components/global/Footer";
 
 const ibm = IBM_Plex_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -21,12 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ibm.className} text-zinc-800 bg-zinc-100 border border-zinc-800`}>
+      <body
+        className={`${ibm.className} text-zinc-800 bg-zinc-100 border border-zinc-800`}
+      >
         <Header />
-        <main>
-          {children}
-        </main>
-      <Footer />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

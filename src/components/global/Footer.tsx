@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer
       className={`flex flex-col items-center gap-2 py-12 px-4 border-t border-zinc-800 
-    ${(path === "/login" || path === "/register") && "hidden"}
+    ${(path === "/signin" || path === "/signup") && "hidden"}
     `}
     >
       <div className="flex flex-col items-center">

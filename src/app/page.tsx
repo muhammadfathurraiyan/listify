@@ -1,5 +1,5 @@
-import TodoCard from "@/components/TodoCard";
-import TodoForm from "@/components/TodoForm";
+import TodoCard from "@/components/home/TodoCard";
+import TodoForm from "@/components/home/TodoForm";
 
 export default async function Home() {
   return (
