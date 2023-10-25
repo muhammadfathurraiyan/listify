@@ -1,5 +1,10 @@
 import { deleteTodo } from "@/lib/action";
-const DeleteButton = ({ id }: { id: string }) => {
+
+type Tbutton = {
+  id: string;
+};
+
+const DeleteButton = ({ id }: Tbutton) => {
   return (
     <form action={deleteTodo}>
       <input type="hidden" name="id" value={id} />

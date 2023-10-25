@@ -1,4 +1,5 @@
 "use server";
+import { redirect } from "next/navigation";
 import prisma from "./db";
 import { revalidatePath } from "next/cache";
 
@@ -12,12 +13,11 @@ export const createTodo = async (data: FormData) => {
       description,
     },
   });
-
   revalidatePath("/");
 };
 
 export const deleteTodo = async (data: FormData) => {
   const id: string = data.get("id")?.valueOf() as string;
   await prisma.todo.delete({ where: { id } });
-  revalidatePath("/");
+  redirect("/");
 };
