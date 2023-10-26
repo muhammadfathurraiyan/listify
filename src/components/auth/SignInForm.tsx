@@ -4,8 +4,10 @@ import { useState } from "react";
 import { SignInSchema } from "@/lib/types";
 // @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
+import { signIn } from "next-auth/react";
+import { redirect } from "next/navigation";
 
-const LoginForm = () => {
+const SignInForm = () => {
   const [error, setError] = useState("");
   const { pending } = useFormStatus();
 
@@ -24,8 +26,22 @@ const LoginForm = () => {
         errorMessage = errorMessage + issue.message;
       });
       setError(errorMessage);
+      return;
     } else {
+      // reset form
       setError("");
+    }
+
+    const signIndData = await signIn("credentials", {
+      email: result.data.email,
+      password: result.data.password,
+      redirect: false,
+    });
+
+    if (signIndData?.error) {
+      setError("email or password incorect");
+    } else {
+      redirect("/");
     }
   };
 
@@ -69,4 +85,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignInForm;

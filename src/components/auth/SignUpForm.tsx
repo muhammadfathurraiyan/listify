@@ -6,7 +6,7 @@ import { useState } from "react";
 // @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
-const RegisterForm = () => {
+const SignUpForm = () => {
   const [error, setError] = useState("");
   const { pending } = useFormStatus();
 
@@ -93,4 +93,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default SignUpForm;

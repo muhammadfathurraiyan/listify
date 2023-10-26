@@ -1,8 +1,10 @@
 "use server";
 import prisma from "../lib/db";
 import { revalidatePath } from "next/cache";
-import { SignUpSchema, TodoSchema } from "@/lib/types";
+import { SignInSchema, SignUpSchema, TodoSchema } from "@/lib/types";
 import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
+import { signIn } from "next-auth/react";
 
 export const createTodo = async (newTodo: unknown) => {
   // server side validation
@@ -30,7 +32,7 @@ export const deleteTodo = async (data: FormData) => {
 };
 
 export const createAccount = async (newAccount: unknown) => {
-  // client side validation
+  // server side validation
   const result = SignUpSchema.safeParse(newAccount);
   if (!result.success) {
     let errorMessage = "";
@@ -40,11 +42,22 @@ export const createAccount = async (newAccount: unknown) => {
     return { error: errorMessage };
   }
 
+  // validate if user email already exist
+  const existingUser = await prisma.user.findUnique({
+    where: { email: result.data.email },
+  });
+  if (existingUser) {
+    return { error: "user with this email already exists." };
+  }
+
+  // hashing password
+  const hashedPassword = await bcrypt.hash(result.data.password, 10);
+
   await prisma.user.create({
     data: {
       name: result.data.name,
       email: result.data.email,
-      password: result.data.password,
+      password: hashedPassword,
     },
   });
 
