@@ -1,6 +1,6 @@
 # Listify
 
-todo list app that helps people to stay organized and efficient.
+[listify](https://nextjs.org/) is todo list app that helps people to stay organized and efficient.
 
 ## Tech stack:
 
@@ -9,3 +9,6 @@ todo list app that helps people to stay organized and efficient.
 - [MongoDB](https://www.mongodb.com/) - database
 - [Prisma](https://www.prisma.io/) - orm
 - etc
+
+
+
