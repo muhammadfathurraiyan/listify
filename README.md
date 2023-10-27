@@ -1,8 +1,8 @@
-## Listify
+# Listify
 
 todo list app that helps people to stay organized and efficient.
 
-# Tech stack:
+## Tech stack:
 
 - [Next.js](https://nextjs.org/) - framework
 - [Tailwind](https://tailwindcss.com/) - styling
