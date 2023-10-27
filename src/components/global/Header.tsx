@@ -13,6 +13,7 @@ const Header = () => {
       <div className="flex gap-5 items-center">
         <Link
           href="https://linktr.ee/muhammadfathurraiyan"
+          target="_blank"
           className="bg-zinc-800 w-fit max-sm:hidden"
         >
           <span
@@ -20,7 +21,7 @@ const Header = () => {
           >
             donate☕
           </span>
-        </Link> 
+        </Link>
         {session ? (
           <button
             onClick={() => signOut({ callbackUrl: "/" })}
