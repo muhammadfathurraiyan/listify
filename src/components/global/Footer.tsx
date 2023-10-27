@@ -11,18 +11,21 @@ const Footer = () => {
           <Link
             className="hover:text-fuchsia-700 duration-200"
             href="https://instagram.com/muhammadfathurraiyan"
+            target="_blank"
           >
             <FaInstagram />
           </Link>
           <Link
             className="hover:text-blue-700 duration-200"
             href="https://www.linkedin.com/in/muhammadfathurraiyan/"
+            target="_blank"
           >
             <FaLinkedin />
           </Link>
           <Link
             className="hover:text-gray-800 duration-200"
             href="https://github.com/muhammadfathurraiyan"
+            target="_blank"
           >
             <FaGithub />
           </Link>
