@@ -40,6 +40,7 @@ const Footer = () => {
         <Link
           className="font-medium underline duration-200 hover:no-underline"
           href="https://muhammadfathurraiyan.site"
+          target="_blank"
         >
           raiyan.
         </Link>
