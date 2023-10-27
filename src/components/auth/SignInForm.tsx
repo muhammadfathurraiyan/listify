@@ -41,7 +41,7 @@ const SignInForm = () => {
     if (signIndData?.error) {
       setError("email or password incorect");
     } else {
-      redirect("/");
+      redirect("/home");
     }
   };
 

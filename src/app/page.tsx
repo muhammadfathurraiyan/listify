@@ -5,7 +5,7 @@ import { authOptions } from "../lib/auth";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  console.log("sesion:" + session);
+  const data = session?.user?.name;
   return (
     <>
       {session && (
@@ -17,7 +17,7 @@ export default async function Home() {
           </div>
           <div className="sm:col-span-2 relative max-sm:-order-1">
             <div className="sm:absolute inset-y-0 inset-x-0 p-12 max-sm:p-8 flex flex-col justify-center gap-6">
-              <h1 className="text-xl">hi.. welcome🖐😎</h1>
+              <h1 className="text-xl">hi.. {data} welcome🖐😎</h1>
               <div className="bg-zinc-800 w-full">
                 <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
                   <h2 className="text-2xl font-bold">add new todo.</h2>
