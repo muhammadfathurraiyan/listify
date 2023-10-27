@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 // @ts-ignore
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
-const TodoForm = () => {
+const TodoForm = ({ belongs }: { belongs: string }) => {
   const [error, setError] = useState("");
   const ref = useRef<HTMLFormElement>(null);
   const { pending } = useFormStatus();
@@ -15,6 +15,7 @@ const TodoForm = () => {
     const newTodo = {
       title: data.get("title"),
       description: data.get("description"),
+      belongsTo: data.get("belongsTo"),
     };
 
     // client side validation
@@ -47,6 +48,7 @@ const TodoForm = () => {
       className="mt-4 flex flex-col justify-center gap-2"
     >
       {error && <p className="text-red-500">{error}</p>}
+      <input name="belongsTo" type="hidden" value={belongs} />
       <label htmlFor="title">title :</label>
       <input
         name="title"

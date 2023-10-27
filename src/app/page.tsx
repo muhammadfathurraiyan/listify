@@ -1,41 +1,32 @@
-import TodoCard from "@/components/home/TodoCard";
-import TodoForm from "@/components/home/TodoForm";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../lib/auth";
+import React from "react";
+import Illustration from "../../public/illustration.svg";
+import Image from "next/image";
+import Link from "next/link";
 
-export default async function Home() {
-  const session = await getServerSession(authOptions);
-  const data = session?.user?.name;
+export default function page() {
   return (
-    <>
-      {session && (
-        <section className="grid sm:grid-cols-5 min-h-screen">
-          <div className="relative sm:col-span-3 sm:border-r max-sm:border-t border-zinc-800 h-screen">
-            <div className="absolute inset-y-0 inset-x-0 grid sm:grid-cols-3 gap-8 max-sm:p-8 p-12 overflow-y-auto">
-              <TodoCard />
-            </div>
-          </div>
-          <div className="sm:col-span-2 relative max-sm:-order-1">
-            <div className="sm:absolute inset-y-0 inset-x-0 p-12 max-sm:p-8 flex flex-col justify-center gap-6">
-              <h1 className="text-xl">hi.. {data} welcome🖐😎</h1>
-              <div className="bg-zinc-800 w-full">
-                <div className="border border-zinc-800 bg-zinc-200 p-4 -translate-x-2 -translate-y-2">
-                  <h2 className="text-2xl font-bold">add new todo.</h2>
-                  <TodoForm />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-bold text-xl">how to use listify:💡</h3>
-                <ol className="list-disc list-inside">
-                  <li>add title to your todo.✅</li>
-                  <li>add description to your todo(optional).✅</li>
-                  <li>click add button to add your todo.✅</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-    </>
+    <section className="flex flex-col items-center justify-center min-h-screen px-4">
+      <div className="sm:w-1/2 mb-2">
+        <h1 className="font-bold text-5xl max-sm:text-2xl text-center leading-[1.18]">
+          listify, manage <span className="underline sm:decoration-[6px]">tasks</span> and{" "}
+          <span className="underline sm:decoration-[6px]">responsibilities</span>
+        </h1>
+      </div>
+      <p className="mb-4 text-center">
+        todo list app that helps people to stay organized and efficient.
+      </p>
+      <Link href="/signin" className="bg-zinc-800 w-fit mb-4">
+        <span className="bg-green-500 justify-center border border-zinc-800 flex items-center duration-200 px-4 py-2 -translate-x-1.5 -translate-y-1.5 hover:-translate-x-1 hover:-translate-y-1 active:translate-x-0 active:translate-y-0">
+          get started!🚀
+        </span>
+      </Link>
+      <Image
+        src={Illustration}
+        alt="illustration"
+        width={300}
+        height={300}
+        className="-mt-2"
+      />
+    </section>
   );
 }

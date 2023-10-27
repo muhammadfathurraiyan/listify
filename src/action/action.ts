@@ -1,10 +1,9 @@
 "use server";
 import prisma from "../lib/db";
 import { revalidatePath } from "next/cache";
-import { SignInSchema, SignUpSchema, TodoSchema } from "@/lib/types";
+import { SignUpSchema, TodoSchema } from "@/lib/types";
 import { redirect } from "next/navigation";
 import bcrypt from "bcrypt";
-import { signIn } from "next-auth/react";
 
 export const createTodo = async (newTodo: unknown) => {
   // server side validation

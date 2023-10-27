@@ -81,12 +81,11 @@ const SignUpForm = () => {
             {pending ? "reidirecting..." : "signup🔐"}
           </span>
         </button>
-        <p>-----or-----</p>
         <Link
           href="/signin"
           className="underline hover:no-underline duration-200"
         >
-          already have account? login here..
+          already have account? signin here..
         </Link>
       </div>
     </form>

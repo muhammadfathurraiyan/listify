@@ -1,16 +1,10 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
-  const path = usePathname();
   return (
-    <footer
-      className={`flex flex-col items-center gap-2 py-12 px-4 border-t border-zinc-800 
-    ${(path === "/signin" || path === "/signup") && "hidden"}
-    `}
-    >
+    <footer className="flex flex-col items-center gap-2 py-12 px-4 border-t border-zinc-800">
       <div className="flex flex-col items-center">
         <p className="font-medium text-lg">get in touch!🤝</p>
         <div className="flex items-center gap-2 text-2xl">

@@ -6,6 +6,7 @@ export const TodoSchema = z.object({
     .min(1, { message: "title must be at least 1 character long." })
     .max(50, { message: "title must be at most 50 characters long." }),
   description: z.string().optional(),
+  belongsTo: z.string(),
 });
 
 export const SignUpSchema = z

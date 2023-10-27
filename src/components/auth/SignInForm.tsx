@@ -78,7 +78,7 @@ const SignInForm = () => {
           href="/signup"
           className="underline hover:no-underline duration-200"
         >
-          don't have account? register here..
+          don't have account? signup here..
         </Link>
       </div>
     </form>

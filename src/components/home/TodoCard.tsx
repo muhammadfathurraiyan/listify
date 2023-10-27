@@ -1,9 +1,8 @@
 import prisma from "@/lib/db";
 import { deleteTodo } from "@/action/action";
 
-const TodoCard = async () => {
-  const todos = await prisma.todo.findMany();
-
+const TodoCard = async ({ belongs }: { belongs: string }) => {
+  const todos = await prisma.todo.findMany({ where: { belongsTo: belongs } });
   return (
     <>
       {todos.map((todo) => (
